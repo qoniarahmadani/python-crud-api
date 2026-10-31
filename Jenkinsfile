@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -17,6 +18,12 @@ pipeline {
         stage('Python Syntax Check') {
             steps {
                 sh 'python3 -m py_compile app.py'
+            }
+        }
+
+        stage('Automated Testing') {
+            steps {
+                sh 'python3 -m unittest discover -s tests -v'
             }
         }
 
