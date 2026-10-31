@@ -45,7 +45,7 @@ pipeline {
             steps {
                 sh '''
                     sleep 5
-                    curl -f http://localhost:5000/health
+                    curl -f http://host.docker.internal:5000/health
                 '''
             }
         }
